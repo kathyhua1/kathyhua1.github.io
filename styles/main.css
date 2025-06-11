@@ -1,0 +1,262 @@
+/* Base styles */
+:root {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --accent-color: #0066FF;
+    --spacing-unit: 2rem;
+    --side-nav-width: 240px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.site-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: var(--side-nav-width);
+    padding: var(--spacing-unit);
+}
+
+/* Navigation */
+.side-nav {
+    position: fixed;
+    width: var(--side-nav-width);
+    height: 100vh;
+    padding: var(--spacing-unit);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+    position: sticky;
+    top: var(--spacing-unit);
+}
+
+.nav-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    padding: 4rem 0;
+}
+
+.section-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Typography */
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Work section */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.work-card {
+    perspective: 1000px;
+    height: 400px;
+}
+
+.work-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.work-card:hover .work-card-inner {
+    transform: rotateY(180deg);
+}
+
+.work-card-front, .work-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.work-card-front {
+    background-color: var(--background-color);
+}
+
+.work-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-card-back {
+    background-color: var(--background-color);
+    padding: 2rem;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.work-card-back h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.work-card-back .work-role {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+}
+
+.work-card-back .work-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* About section */
+.about-text {
+    font-size: 1.25rem;
+    max-width: 38em;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Contact section */
+.contact-content {
+    margin-top: 2rem;
+}
+
+.contact-email {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.2s ease;
+}
+
+.contact-email:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --side-nav-width: 0px;
+    }
+
+    .side-nav {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .work-card {
+        height: 300px;
+    }
+} 

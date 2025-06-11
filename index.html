@@ -3,27 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="assets/styles/main.css">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="cursor"></div>
-  <nav>
-    <ul>
-      <li><a href="#intro">Intro</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#values">Values</a></li>
-      <li><a href="#background">Background</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <section id="intro">
-    <h1>Hello, I'm a product manager and designer focused on digital minimalism.</h1>
-    <p>Welcome to my portfolio.</p>
-  </section>
-  <!-- Additional sections go here -->
-  <script src="assets/scripts/main.js"></script>
+  <div class="site-container">
+    <nav class="side-nav">
+      <div class="nav-content">
+        <div class="nav-header">Your Name</div>
+        <ul class="nav-links">
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section id="intro" class="section">
+        <div class="section-content">
+          <h1>Hi! I'm a Product Manager<br>
+            focused on creating<br>
+            impactful digital experiences.</h1>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-content">
+          <h2>Work</h2>
+          <div class="work-grid">
+            <div class="work-card">
+              <div class="work-card-inner">
+                <div class="work-card-front">
+                  <img src="images/project1.svg" alt="Project One">
+                </div>
+                <div class="work-card-back">
+                  <h3>Project One</h3>
+                  <p class="work-role">Role & Year</p>
+                  <p class="work-description">Brief description of the project and your contribution to it.</p>
+                </div>
+              </div>
+            </div>
+            <div class="work-card">
+              <div class="work-card-inner">
+                <div class="work-card-front">
+                  <img src="images/project2.svg" alt="Project Two">
+                </div>
+                <div class="work-card-back">
+                  <h3>Project Two</h3>
+                  <p class="work-role">Role & Year</p>
+                  <p class="work-description">Brief description of the project and your contribution to it.</p>
+                </div>
+              </div>
+            </div>
+            <div class="work-card">
+              <div class="work-card-inner">
+                <div class="work-card-front">
+                  <img src="images/project3.svg" alt="Project Three">
+                </div>
+                <div class="work-card-back">
+                  <h3>Project Three</h3>
+                  <p class="work-role">Role & Year</p>
+                  <p class="work-description">Brief description of the project and your contribution to it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-content">
+          <h2>About</h2>
+          <div class="about-text">
+            <p>I'm a [your role] with [X] years of experience in [your field]. 
+            I focus on [your specialties] and have worked with [types of clients/companies].</p>
+            
+            <p>My approach combines [your key strengths] with [your unique perspective], 
+            allowing me to [what you do best].</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="section-content">
+          <h2>Contact</h2>
+          <div class="contact-content">
+            <a href="mailto:your.email@example.com" class="contact-email">your.email@example.com</a>
+            <div class="social-links">
+              <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="#" target="_blank" rel="noopener">GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>
